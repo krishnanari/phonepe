@@ -221,7 +221,7 @@ def Aggre_user_plot_3(df, state):
     st.plotly_chart(fig_line_1)
 
 
-#Map_insurance_district
+#Map_tran_district
 def Map_tran_District(df, state):
 
     tacy= df[df["States"] == state]
@@ -288,7 +288,7 @@ def map_user_plot_3(df, states):
                                 title= f"{states.upper()} APPOPENS", height= 800, color_discrete_sequence= px.colors.sequential.Rainbow)
         st.plotly_chart(fig_map_user_bar_2)
 
-# top_insurance_plot_1
+# top_tran_plot_1
 def Top_transaction_plot_1(df, state):
     tiy= df[df["States"]== state]
     tiy.reset_index(drop= True, inplace= True)
@@ -305,6 +305,7 @@ def Top_transaction_plot_1(df, state):
                                 title= "TRANSACTION COUNT", height= 650,width= 600, color_discrete_sequence= px.colors.sequential.Agsunset_r)
         st.plotly_chart(fig_top_insur_bar_2)
 
+# top_user_plot_1
 def top_user_plot_1(df, year):
     tuy= df[df["Years"]== year]
     tuy.reset_index(drop= True, inplace= True)
@@ -492,7 +493,6 @@ elif select == "DATA EXPLORATION":
 
             col1,col2= st.columns(2)
             with col1:
+                
                 states= st.selectbox("Select The State_tu", top_user_Y["States"].unique())
-
             top_user_plot_2(top_user_Y, states)
-
